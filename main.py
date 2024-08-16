@@ -6,9 +6,10 @@ def main():
     num_words = get_num_words(text)
     num_char = get_num_character(text)
     num_char_sort = converter_list(num_char)
-
+    sorted_list = sorted(num_char_sort, key=lambda k: k[1], reverse=True)
+    
     print(f"{num_words} words found in the document \n")    
-    for c in num_char_sort:
+    for c in sorted_list:
         if c[0].isalpha():
             print(f"The {c[0]} character was found {c[1]} times")
         
